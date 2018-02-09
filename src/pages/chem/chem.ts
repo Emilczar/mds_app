@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Mds } from '../../assets/mds';
+import * as data from './test.json';
+
+
 /**
  * Generated class for the ChemPage page.
  *
@@ -24,8 +27,9 @@ export class ChemPage {
     const adres = new Mds();
     this.title = this.navParams.get('title'); 
     this.menu = adres.getAdresChem();
-
-
+    const a = (<any>data).name;
+    console.log(" dane z json: " + a);
+  
 
   }
 

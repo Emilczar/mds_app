@@ -1,0 +1,97 @@
+<!--
+  Generated template for the ProgramPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-buttons>
+    <ion-list>
+      <ion-item (click)="get_program_szczotki()">baza</ion-item>
+      <ion-item >{{szczotki}}</ion-item>
+  
+    
+     
+     
+    </ion-list>
+    </ion-buttons>
+
+
+
+
+    <ion-list radio-group [(ngModel)]="relationship">
+      <ion-item>
+        <ion-label>T6</ion-label>
+        <ion-radio value="T6" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>C4</ion-label>
+        <ion-radio value="C4"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <!-- .... -->
+
+
+    <ion-list>
+      <ion-item>
+        <ion-label>drzwi prawe bez okna</ion-label>
+        <ion-checkbox [(ngModel)]="DPB"   [disabled]="DPO||DPBB"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>brak drzwi prawych</ion-label>
+        <ion-checkbox [(ngModel)]="DPBB"  [disabled]="DPB||DPO"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>drzwi prawe z oknem</ion-label>
+        <ion-checkbox [(ngModel)]="DPO" [disabled]="DPB||DPBB"></ion-checkbox>
+      </ion-item>
+    <!-- .... -->
+      <ion-item>  
+          <ion-label>drzwi lewe z oknem</ion-label>
+        <ion-checkbox [(ngModel)]="DLO" [disabled]="DLBB || DLB" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>drzwi prawe bez okna</ion-label>
+        <ion-checkbox [(ngModel)]="DLB"  [disabled]="DLO || DLBB" ></ion-checkbox>
+      </ion-item>
+      <ion-item>
+          <ion-label>brak drzwi Lewych</ion-label>
+        <ion-checkbox  [(ngModel)]="DLBB"  [disabled]="DLO || DLB" ></ion-checkbox>
+      </ion-item>
+      <!-- .... -->   
+      <ion-item>
+          <ion-label>Klapa z oknem</ion-label>
+        <ion-checkbox [(ngModel)]="KO"  [disabled]="KB || FB || FO "  ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Klapa bez okna</ion-label>
+        <ion-checkbox [(ngModel)]="KB" [disabled]="KO || FB || FO"  ></ion-checkbox>
+      </ion-item>
+         <!-- .... -->
+      <ion-item>
+        <ion-label>Furtka z okem</ion-label>
+        <ion-checkbox [(ngModel)]="FO" [disabled]="FB || KO || KB"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Furtka bez okna</ion-label>
+        <ion-checkbox [(ngModel)]="FB" [disabled]="FO || KO || KB"></ion-checkbox>
+      </ion-item>
+  
+    </ion-list>
+
+</ion-content>

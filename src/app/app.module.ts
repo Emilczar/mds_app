@@ -4,11 +4,19 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { SQLite } from '@ionic-native/sqlite';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ChemPage }  from '../pages/chem/chem'
 import { LacPage } from '../pages/lac/lac';
 import { AdresPage } from '../pages/adres/adres';
+import { ProgramPage} from '../pages/program/program';
+import { TestPage} from '../pages/test/test';
+
+import { DatebaseProvider } from '../providers/datebase/datebase';
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { DataProvider } from '../providers/data/data';
 
 @NgModule({
   declarations: [
@@ -16,7 +24,11 @@ import { AdresPage } from '../pages/adres/adres';
     HomePage,
     ChemPage,
     LacPage,
-    AdresPage
+    AdresPage,
+    ProgramPage,
+    TestPage
+ 
+    
   ],
   imports: [
     BrowserModule,
@@ -28,12 +40,19 @@ import { AdresPage } from '../pages/adres/adres';
     HomePage,
     ChemPage,
     LacPage,
-    AdresPage
+    AdresPage,
+    ProgramPage,
+    TestPage
+   
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SQLite,
+    SQLitePorter,
+    DatebaseProvider,
+    DataProvider
   ]
 })
 export class AppModule {}
