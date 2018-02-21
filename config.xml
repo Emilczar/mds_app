@@ -3,7 +3,7 @@
     <name>mds_app</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="emilczar@gmail.com" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.8.101:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -85,6 +85,6 @@
     <allow-navigation href="http://192.168.43.153:8100" />
     <allow-navigation href="http://192.168.8.101:8100" />
     <plugin name="uk.co.workingedge.cordova.plugin.sqliteporter" spec="^1.0.2" />
-    <engine name="android" spec="7.0.0" />
+    <engine name="android" spec="^7.0.0" />
     <engine name="browser" spec="5.0.3" />
 </widget>

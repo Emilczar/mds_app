@@ -19,7 +19,7 @@
       <ion-item (click)="get_program_szczotki()">baza</ion-item>
       <ion-item >{{szczotki}}</ion-item>
   
-    
+      <ion-item (click)="set_test()">test</ion-item>
      
      
     </ion-list>
@@ -45,51 +45,51 @@
     <ion-list>
       <ion-item>
         <ion-label>drzwi prawe bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="DPB"   [disabled]="DPO||DPBB"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="DPB"   [disabled]="DPO||DPBB"  (click)="set_DPB()"></ion-checkbox>
       </ion-item>
 
       <ion-item>
         <ion-label>brak drzwi prawych</ion-label>
-        <ion-checkbox [(ngModel)]="DPBB"  [disabled]="DPB||DPO"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="DPBB"  [disabled]="DPB||DPO"  (click)="set_DPBB()"></ion-checkbox>
       </ion-item>
 
       <ion-item>
         <ion-label>drzwi prawe z oknem</ion-label>
-        <ion-checkbox [(ngModel)]="DPO" [disabled]="DPB||DPBB"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="DPO" [disabled]="DPB||DPBB" (click)="set_DPO()"></ion-checkbox>
       </ion-item>
     <!-- .... -->
       <ion-item>  
           <ion-label>drzwi lewe z oknem</ion-label>
-        <ion-checkbox [(ngModel)]="DLO" [disabled]="DLBB || DLB" ></ion-checkbox>
+        <ion-checkbox [(ngModel)]="DLO" [disabled]="DLBB || DLB" (click)="set_DLO()" ></ion-checkbox>
       </ion-item>
 
       <ion-item>
           <ion-label>drzwi prawe bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="DLB"  [disabled]="DLO || DLBB" ></ion-checkbox>
+        <ion-checkbox [(ngModel)]="DLB"  [disabled]="DLO || DLBB" (click)="set_DLB()"></ion-checkbox>
       </ion-item>
       <ion-item>
           <ion-label>brak drzwi Lewych</ion-label>
-        <ion-checkbox  [(ngModel)]="DLBB"  [disabled]="DLO || DLB" ></ion-checkbox>
+        <ion-checkbox  [(ngModel)]="DLBB"  [disabled]="DLO || DLB" (click)="set_DLBB()"></ion-checkbox>
       </ion-item>
       <!-- .... -->   
       <ion-item>
           <ion-label>Klapa z oknem</ion-label>
-        <ion-checkbox [(ngModel)]="KO"  [disabled]="KB || FB || FO "  ></ion-checkbox>
+        <ion-checkbox [(ngModel)]="KO"  [disabled]="KB || FB || FO " (click)="set_KO()"></ion-checkbox>
       </ion-item>
 
       <ion-item>
         <ion-label>Klapa bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="KB" [disabled]="KO || FB || FO"  ></ion-checkbox>
+        <ion-checkbox [(ngModel)]="KB" [disabled]="KO || FB || FO"  (click)="set_KB()"></ion-checkbox>
       </ion-item>
          <!-- .... -->
       <ion-item>
         <ion-label>Furtka z okem</ion-label>
-        <ion-checkbox [(ngModel)]="FO" [disabled]="FB || KO || KB"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="FO" [disabled]="FB || KO || KB"  (click)="set_FO()"></ion-checkbox>
       </ion-item>
 
       <ion-item>
         <ion-label>Furtka bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="FB" [disabled]="FO || KO || KB"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="FB" [disabled]="FO || KO || KB" (click)="set_FB()"></ion-checkbox>
       </ion-item>
   
     </ion-list>
