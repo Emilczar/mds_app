@@ -13,10 +13,12 @@ import { LacPage } from '../pages/lac/lac';
 import { AdresPage } from '../pages/adres/adres';
 import { ProgramPage} from '../pages/program/program';
 import { TestPage} from '../pages/test/test';
+import { FtestPage} from '../pages/ftest/ftest'
 
 import { DatebaseProvider } from '../providers/datebase/datebase';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { DataProvider } from '../providers/data/data';
+import { ProgramProvider } from '../providers/program/program';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { DataProvider } from '../providers/data/data';
     LacPage,
     AdresPage,
     ProgramPage,
-    TestPage
+    TestPage,
+    FtestPage
  
     
   ],
@@ -42,7 +45,8 @@ import { DataProvider } from '../providers/data/data';
     LacPage,
     AdresPage,
     ProgramPage,
-    TestPage
+    TestPage,
+    FtestPage
    
   ],
   providers: [
@@ -52,7 +56,8 @@ import { DataProvider } from '../providers/data/data';
     SQLite,
     SQLitePorter,
     DatebaseProvider,
-    DataProvider
+    DataProvider,
+    ProgramProvider
   ]
 })
 export class AppModule {}

@@ -4,6 +4,7 @@ import { ChemPage } from '../chem/chem';
 import { LacPage } from '../lac/lac';
 import { ProgramPage } from '../program/program';
 import { TestPage} from  '../test/test'
+import {FtestPage } from '../ftest/ftest'
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -30,6 +31,10 @@ export class HomePage {
   viewTest(){
 
     this.navCtrl.push( TestPage, {title: "Programy"} );
+  }
+  viewPTest(){
+
+    this.navCtrl.push( FtestPage, {title: "Programy"} );
   }
 
 }

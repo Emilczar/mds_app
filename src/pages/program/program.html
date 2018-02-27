@@ -5,93 +5,134 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>{{title}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-  <ion-buttons>
-    <ion-list>
-      <ion-item (click)="get_program_szczotki()">baza</ion-item>
-      <ion-item >{{szczotki}}</ion-item>
-  
-      <ion-item (click)="set_test()">test</ion-item>
-     
-     
-    </ion-list>
-    </ion-buttons>
+
+<ion-item>C4</ion-item>
+<ion-list>
+
+    <ion-item>
+        <ion-label>Model</ion-label>
+        <ion-select [(ngModel)]="model" interface="popover" >
+          <ion-option value="krotki">krotki</ion-option>
+          <ion-option value="dlugi">dlugi</ion-option>
+        </ion-select>
+      </ion-item>
+</ion-list>
 
 
+<ion-list>
+    <ion-item>
+        <ion-label>Typ</ion-label>
+        <ion-select [(ngModel)]="typ" interface="popover" >
+          <ion-option value="kasten">kasten</ion-option>
+          <ion-option value="kombi">kombi</ion-option>
+        </ion-select>
+      </ion-item>
+</ion-list>
+
+<ion-list>
+    <ion-item>
+        <ion-label>Drzwi Prawe</ion-label>
+        <ion-select [(ngModel)]="doorRight" interface="popover" >
+          <ion-option value=1>tak</ion-option>
+          <ion-option value=0>brak</ion-option>
+        </ion-select>
+      </ion-item>
+</ion-list>
+
+<ion-list>
+    <ion-item >
+        <ion-label>Drzwi Prawe Okno</ion-label>
+        <ion-select [(ngModel)]="doorRightWindows" interface="popover" >
+          <ion-option value=1>tak</ion-option>
+          <ion-option value=0>brak</ion-option>
+        </ion-select>
+      </ion-item>
+</ion-list>
+
+<ion-list>
+    <ion-item>
+        <ion-label>Drzwi Lewe</ion-label>
+        <ion-select [(ngModel)]="doorLeft" interface="popover" >
+          <ion-option value=1>tak</ion-option>
+          <ion-option value="0">brak</ion-option>
+        </ion-select>
+      </ion-item>
+</ion-list>
+
+<ion-list>
+    <ion-item >
+        <ion-label>Drzwi Lewe Okno</ion-label>
+        <ion-select [(ngModel)]="doorLeftWindows" interface="popover" >
+          <ion-option value=1>tak</ion-option>
+          <ion-option value=0>brak</ion-option>
+        </ion-select>
+      </ion-item>
+</ion-list>
 
 
-    <ion-list radio-group [(ngModel)]="relationship">
-      <ion-item>
-        <ion-label>T6</ion-label>
-        <ion-radio value="T6" checked></ion-radio>
+<ion-list>
+    <ion-item >
+        <ion-label>Tył Prawe Okno</ion-label>
+        <ion-select [(ngModel)]="backRightWindows" interface="popover" >
+          <ion-option value=1>tak</ion-option>
+          <ion-option value=0>brak</ion-option>
+        </ion-select>
       </ion-item>
-      <ion-item>
-        <ion-label>C4</ion-label>
-        <ion-radio value="C4"></ion-radio>
-      </ion-item>
-    </ion-list>
-
-    <!-- .... -->
+</ion-list>
 
 
-    <ion-list>
-      <ion-item>
-        <ion-label>drzwi prawe bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="DPB"   [disabled]="DPO||DPBB"  (click)="set_DPB()"></ion-checkbox>
+<ion-list>
+    <ion-item >
+        <ion-label>Tył Lewe Okno</ion-label>
+        <ion-select [(ngModel)]="backLeftWindows" interface="popover" >
+          <ion-option value=1>tak</ion-option>
+          <ion-option value=0>brak</ion-option>
+        </ion-select>
       </ion-item>
+</ion-list>
 
-      <ion-item>
-        <ion-label>brak drzwi prawych</ion-label>
-        <ion-checkbox [(ngModel)]="DPBB"  [disabled]="DPB||DPO"  (click)="set_DPBB()"></ion-checkbox>
-      </ion-item>
 
-      <ion-item>
-        <ion-label>drzwi prawe z oknem</ion-label>
-        <ion-checkbox [(ngModel)]="DPO" [disabled]="DPB||DPBB" (click)="set_DPO()"></ion-checkbox>
+<ion-list>
+    <ion-item >
+        <ion-label>tył</ion-label>
+        <ion-select [(ngModel)]="backGate" interface="popover" >
+          <ion-option value="furtka">furtka</ion-option>
+          <ion-option value="klapa">klapa</ion-option>
+        </ion-select>
       </ion-item>
-    <!-- .... -->
-      <ion-item>  
-          <ion-label>drzwi lewe z oknem</ion-label>
-        <ion-checkbox [(ngModel)]="DLO" [disabled]="DLBB || DLB" (click)="set_DLO()" ></ion-checkbox>
-      </ion-item>
+</ion-list>
 
-      <ion-item>
-          <ion-label>drzwi prawe bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="DLB"  [disabled]="DLO || DLBB" (click)="set_DLB()"></ion-checkbox>
+<ion-list>
+    <ion-item >
+        <ion-label>tył Okno</ion-label>
+        <ion-select [(ngModel)]="backGateWindows" interface="popover" >
+          <ion-option value=1>tak</ion-option>
+          <ion-option value=0>brak</ion-option>
+        </ion-select>
       </ion-item>
-      <ion-item>
-          <ion-label>brak drzwi Lewych</ion-label>
-        <ion-checkbox  [(ngModel)]="DLBB"  [disabled]="DLO || DLB" (click)="set_DLBB()"></ion-checkbox>
-      </ion-item>
-      <!-- .... -->   
-      <ion-item>
-          <ion-label>Klapa z oknem</ion-label>
-        <ion-checkbox [(ngModel)]="KO"  [disabled]="KB || FB || FO " (click)="set_KO()"></ion-checkbox>
-      </ion-item>
+</ion-list>
 
-      <ion-item>
-        <ion-label>Klapa bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="KB" [disabled]="KO || FB || FO"  (click)="set_KB()"></ion-checkbox>
-      </ion-item>
-         <!-- .... -->
-      <ion-item>
-        <ion-label>Furtka z okem</ion-label>
-        <ion-checkbox [(ngModel)]="FO" [disabled]="FB || KO || KB"  (click)="set_FO()"></ion-checkbox>
-      </ion-item>
+<ion-buttons >
+<ion-item (click)="onClick()" >CLICK </ion-item>
+</ion-buttons>
 
-      <ion-item>
-        <ion-label>Furtka bez okna</ion-label>
-        <ion-checkbox [(ngModel)]="FB" [disabled]="FO || KO || KB" (click)="set_FB()"></ion-checkbox>
-      </ion-item>
-  
-    </ion-list>
+
+<ion-buttons >
+  <ion-item (click)="onClick2()" >CLICK2 </ion-item>
+  </ion-buttons>
+
+
+  <ion-list>
+    <ion-item >
+{{wynik}}
+    </ion-item>
+  </ion-list>
 
 </ion-content>

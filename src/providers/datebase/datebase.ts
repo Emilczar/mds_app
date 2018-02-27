@@ -8,6 +8,9 @@ import {
 } from '@ionic-native/sqlite';
 import { DataProvider } from '../data/data';
 
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+
 
 /*
   Generated class for the DatebaseProvider provider.
@@ -17,58 +20,43 @@ import { DataProvider } from '../data/data';
 */
 @Injectable()
 export class DatebaseProvider {
- 
- private wynik: string
-/*  private drzwi_l: string;
- private drzwi_p: string;
- private tyl: string;
- private typ: string;
- private model: string; */
- private wynik_szczotki : string;
-
+wynik;
+private sum = new Subject<string>();
   constructor(private sqlite: SQLite, private baza : DataProvider) {}
 
 
 
-  get_select(drzwi_l: string, drzwi_p: string, tyl: string, typ: string, model: string) {
+
+
+// Wyszukiwanie programu na szczotki
+  get_szczotki(model, doorRight,  doorLeft,  backGate) {
+
     this.sqlite.create({
         name: 'dataDB.db',
         location: 'default'
       })
       .then((db: SQLiteObject) => {
-        db.executeSql("SELECT program FROM szczotki where drzwi_l = ? AND drzwi_p = ? AND tyl = ? AND typ= ?  AND  model =? ", [drzwi_l, drzwi_p, tyl, typ, model])
-          .then((data) => {
+        db.executeSql("SELECT program FROM szczotkiC4 where model = ? AND doorRight = ? AND doorLeft = ? AND backGate= ?", [model,doorRight,doorLeft,backGate])
+      .then((data) => {
             this.wynik = data.rows.item(0).program;
-            console.log(" this.wynik:  " + this.wynik);
+            this.sum.next(this.wynik)
+            console.log(" wynik: get_szczotki() " + this.wynik);
           })
-
       })
       .catch((e) => {
-        console.log(" error  get_select: " + e);
+        console.log(" error get_szczotki: " + e);
       })
-    return this.wynik;
+    // return console.log(" return " + this.wynik);
 
   }
 
-  get_szczotki(drzwi_l: string, drzwi_p: string, tyl: string, typ: string, model: string) {
-    this.sqlite.create({
-        name: 'dataDB.db',
-        location: 'default'
-      })
-      .then((db: SQLiteObject) => {
-        db.executeSql("SELECT program FROM szczotki where drzwi_l = ? AND drzwi_p = ? AND tyl = ? AND typ= ?  AND  model =? ", [drzwi_l, drzwi_p, tyl, typ, model])
-          .then((data) => {
-            this.wynik_szczotki = data.rows.item(0).program;
-            console.log(" this.wynik_szczotki:  " + this.wynik_szczotki);
-          })
 
-      })
-      .catch((e) => {
-        console.log(" error  get_select: " + e);
-      })
-    return this.wynik_szczotki;
+getSum(): Observable<string>{
+  return this.sum.asObservable();
+}
 
-  }
+
+
 
 
 
