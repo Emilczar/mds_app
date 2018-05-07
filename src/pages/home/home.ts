@@ -15,7 +15,6 @@ export class HomePage {
 
   }
   viewChem(){
-
     this.navCtrl.push( ChemPage, {title: "Chemiczny"} );
   }
 
@@ -26,11 +25,11 @@ export class HomePage {
 
   viewProgram(){
 
-    this.navCtrl.push( ProgramPage, {title: "Programy"} );
+    this.navCtrl.push( ProgramPage, {title: "Programy C4"} );
   }
   viewTest(){
 
-    this.navCtrl.push( TestPage, {title: "Programy"} );
+    this.navCtrl.push( TestPage, {title: "Programy "} );
   }
   viewPTest(){
 

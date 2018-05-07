@@ -18,7 +18,7 @@ import { FtestPage} from '../pages/ftest/ftest'
 import { DatebaseProvider } from '../providers/datebase/datebase';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { DataProvider } from '../providers/data/data';
-import { ProgramProvider } from '../providers/program/program';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { ProgramProvider } from '../providers/program/program';
     ProgramPage,
     TestPage,
     FtestPage
- 
-    
+
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +47,7 @@ import { ProgramProvider } from '../providers/program/program';
     ProgramPage,
     TestPage,
     FtestPage
-   
+
   ],
   providers: [
     StatusBar,
@@ -56,8 +56,8 @@ import { ProgramProvider } from '../providers/program/program';
     SQLite,
     SQLitePorter,
     DatebaseProvider,
-    DataProvider,
-    ProgramProvider
+    DataProvider
+
   ]
 })
 export class AppModule {}

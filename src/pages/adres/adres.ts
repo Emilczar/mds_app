@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { Mds } from '../../assets/mds' // class for adres MDS 
+import { Mds } from '../../assets/mds' // class for adres MDS
 
 /**
  * Generated class for the AdresPage page.
@@ -16,20 +16,28 @@ import { Mds } from '../../assets/mds' // class for adres MDS
   templateUrl: 'adres.html',
 })
 export class AdresPage {
-  private mds;
-  private adres;
-  private hex;
+
+  public mds;
+   adres ;
+   hex ;
+   lac1;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+
+
     this.adres = this.navParams.get('adres'); //nazwa header
-    console.log("AdresPage " + this.adres);
+
     const adresy = new Mds();
+    this.lac1 = adresy.getLac();
+
+    console.log("lac 1 " + this.lac1);
     this.mds = adresy.getMenu(); // lista adresów mds
-    // let hexTab;
+
     this.hex = adresy.decToHex(this.adres,this.mds)
-    console.log('hex:'+this.hex);
-  }
+
+
+    }
 
 }
